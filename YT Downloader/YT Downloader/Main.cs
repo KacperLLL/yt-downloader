@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngleSharp.Dom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace YT_Downloader
 {
     internal class Start
     {
+        private double _procent= 0;
+
         static async Task Main()
         {
             Console.WriteLine("Podaj link do filmu z YouTube:");
@@ -17,14 +20,22 @@ namespace YT_Downloader
 
             if(videoUrl is not null)
             {
-                Download download = new Download(videoUrl, path);
-                
-                await download.StartDownload();
+                Download download = new(videoUrl, path);
+
+                var progress = new Progress<double>(p =>
+                {
+                    Console.Write($"\rPostęp pobierania: {p:P1}");
+                });
+
+                await download.StartDownload(progress);
+
             }
             else
             {
                 Console.WriteLine("BLAD");
             }
         }
+        public double procent { get { return _procent; } set { _procent = value; } }
+
     }
 }

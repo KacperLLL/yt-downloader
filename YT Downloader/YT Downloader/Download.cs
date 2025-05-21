@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
 using YoutubeExplode.Videos.Streams;
+using System.Text.RegularExpressions;
 
 namespace YT_Downloader
 {
@@ -20,11 +22,13 @@ namespace YT_Downloader
                 _url= URL;
                 _youtube = new YoutubeClient();
                 _save_path= SAVE_PATH;
+                _is_busy = false;
         }
 
         public async Task StartDownload()
         {
             Console.WriteLine("Rozpoczenczie pobierania: ");
+
             try
             {
                 _is_busy = true;
@@ -37,9 +41,53 @@ namespace YT_Downloader
             finally
             {
                 Console.WriteLine("Zakonczono pobieranie");
-                _is_busy= false;
+                _is_busy = false;
             }
         }
+
+        public async Task StartDownload(Progress<double> PROGRESS)
+        {
+            Console.WriteLine("Rozpoczenczie pobierania: ");
+
+            try
+            {
+
+                _is_busy = true;
+                await youtube.Videos.DownloadAsync(_url, _save_path, PROGRESS);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Zakonczono pobieranie");
+                _is_busy = false;
+            }
+        }
+
+        public async Task StartDownload(Progress<double> PROGRESS, CancellationToken TOKEN)
+        {
+            Console.WriteLine("Rozpoczenczie pobierania: ");
+
+            try
+            {
+                _is_busy = true;
+                await youtube.Videos.DownloadAsync(_url, _save_path, PROGRESS, TOKEN);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Zakonczono pobieranie");
+                _is_busy = false;
+            }
+        }
+
+
 
 
         public YoutubeClient youtube { get { return _youtube; } }
