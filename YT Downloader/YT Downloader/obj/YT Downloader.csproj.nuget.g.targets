@@ -7,5 +7,6 @@
     <Import Project="$(NuGetPackageRoot)system.text.json\9.0.1\buildTransitive\netcoreapp2.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\9.0.1\buildTransitive\netcoreapp2.0\System.Text.Json.targets')" />
     <Import Project="$(NuGetPackageRoot)system.codedom\9.0.1\buildTransitive\netcoreapp2.0\System.CodeDom.targets" Condition="Exists('$(NuGetPackageRoot)system.codedom\9.0.1\buildTransitive\netcoreapp2.0\System.CodeDom.targets')" />
     <Import Project="$(NuGetPackageRoot)system.management\9.0.1\buildTransitive\netcoreapp2.0\System.Management.targets" Condition="Exists('$(NuGetPackageRoot)system.management\9.0.1\buildTransitive\netcoreapp2.0\System.Management.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.drawing.common\9.0.5\buildTransitive\netcoreapp2.0\System.Drawing.Common.targets" Condition="Exists('$(NuGetPackageRoot)system.drawing.common\9.0.5\buildTransitive\netcoreapp2.0\System.Drawing.Common.targets')" />
   </ImportGroup>
 </Project>

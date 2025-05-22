@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKiLkJKYDRBVLs0de7+AGvnLZ2+lIXs6znqul3WPy1bsqs9BlUnXCkEFODeS/yuAmqBYG0l44OEc9xU/a03kWA==",
+  "dgSpecHash": "L3EfVSWfGW3e7eEVnopkbbgW54w/ibCDhXw9ZPQhEGnrW0RKKfujv6YaqkXO/Z4XIDPwPxTahbS0yu02WezUyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kacper\\Desktop\\yt downloader\\YT Downloader\\YT Downloader\\YT Downloader.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Kacper\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
     "C:\\Users\\Kacper\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Kacper\\.nuget\\packages\\system.codedom\\9.0.1\\system.codedom.9.0.1.nupkg.sha512",
+    "C:\\Users\\Kacper\\.nuget\\packages\\system.drawing.common\\9.0.5\\system.drawing.common.9.0.5.nupkg.sha512",
     "C:\\Users\\Kacper\\.nuget\\packages\\system.io.pipelines\\9.0.1\\system.io.pipelines.9.0.1.nupkg.sha512",
     "C:\\Users\\Kacper\\.nuget\\packages\\system.management\\9.0.1\\system.management.9.0.1.nupkg.sha512",
     "C:\\Users\\Kacper\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",

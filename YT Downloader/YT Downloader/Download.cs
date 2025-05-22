@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -18,26 +19,41 @@ namespace YT_Downloader
         private string _url;
         private string _save_path;
         private bool _is_busy;
-        private readonly System.Threading.Tasks.ValueTask<YoutubeExplode.Videos.Video> _video;
-        private readonly TimeSpan? _duration;
-        private readonly string _title;
-        private readonly string _description;
-        private readonly YoutubeExplode.Common.Author _author;
+        private System.Threading.Tasks.ValueTask<YoutubeExplode.Videos.Video> _video;
+        private TimeSpan? _duration;
+        private string _title;
+        private string _description;
+        private YoutubeExplode.Common.Author _author;
+        private string _thumbnailUrl;
+        private Image _image;
 
         public Download(string URL, string SAVE_PATH) { 
+            //ustawienia klienta pobierania
             _url= URL;
             _youtube = new YoutubeClient();
             _save_path= SAVE_PATH;
             _is_busy = false;
+        }
 
+        public async void DownloadInit()
+        {
+            //ustawienie podstawowych metadanych
             _video = _youtube.Videos.GetAsync(_url);
             _duration = _video.Result.Duration;
             _title = _video.Result.Title;
             _description = _video.Result.Description;
             _author = _video.Result.Author;
-                
+
+            //pobieranie miniatury
+            _thumbnailUrl = _video.Result.Thumbnails.GetWithHighestResolution().Url;
+            using HttpClient http = new();
+            var imageData = await http.GetByteArrayAsync(thumbnailUrl);
+
+            using var ms = new MemoryStream(imageData);
+            Image image = Image.FromStream(ms);
             
         }
+
 
 
         public async Task StartDownload()
@@ -105,6 +121,7 @@ namespace YT_Downloader
 
 
 
+        public Image image { get; }
         public YoutubeClient youtube { get { return _youtube; } }
         public System.Threading.Tasks.ValueTask<YoutubeExplode.Videos.Video> video { get { return _video; } }
         public string url { get { return _url;} set { _url = value; } }
@@ -113,6 +130,7 @@ namespace YT_Downloader
         public TimeSpan? duration { get { return _duration; } }
         public string title { get { return _title; } }
         public string description { get { return _description; } }
+        public string thumbnailUrl { get { return _thumbnailUrl; } }
         public YoutubeExplode.Common.Author author { get { return _author; } }
     }
 }
