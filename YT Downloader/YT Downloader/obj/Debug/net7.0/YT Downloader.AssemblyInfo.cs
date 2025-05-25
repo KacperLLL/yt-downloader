@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YT Downloader")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a51bb0c7a8ed90d16832adc816c10c77ca925551")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+538eb43d35c2a6e4857a8b27d4573ec724ed2334")]
 [assembly: System.Reflection.AssemblyProductAttribute("YT Downloader")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YT Downloader")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

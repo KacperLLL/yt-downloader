@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "YT Downloader/1.0.0": {
         "dependencies": {
+          "SixLabors.ImageSharp": "3.1.8",
+          "System.Drawing.Common": "9.0.5",
           "YoutubeExplode": "6.5.4",
           "YoutubeExplode.Converter": "6.5.4"
         },
@@ -42,12 +44,28 @@
           }
         }
       },
+      "SixLabors.ImageSharp/3.1.8": {
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.1.8.0"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.CodeDom/9.0.1": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.124.61010"
+          }
+        }
+      },
+      "System.Drawing.Common/9.0.5": {
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.525.21601"
           }
         }
       },
@@ -163,6 +181,13 @@
       "path": "microsoft.bcl.asyncinterfaces/9.0.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512"
     },
+    "SixLabors.ImageSharp/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8eJkROLGh6DBQLR666q2aOpAaean2puZaZ6Ur9YxoyGzjaZhv8OJSxtnDou54+OXMkXtLUdyQC0so47sOsqZjg==",
+      "path": "sixlabors.imagesharp/3.1.8",
+      "hashPath": "sixlabors.imagesharp.3.1.8.nupkg.sha512"
+    },
     "System.Buffers/4.5.1": {
       "type": "package",
       "serviceable": true,
@@ -176,6 +201,13 @@
       "sha512": "sha512-2J5uq+2smnj+u1jlyVJ6BGGqaK9fHcK/EwN7mbsuPqTI6dZr86br8Cg6o/5B+icQ9ANTvTDpJjnhDNtYYZijHQ==",
       "path": "system.codedom/9.0.1",
       "hashPath": "system.codedom.9.0.1.nupkg.sha512"
+    },
+    "System.Drawing.Common/9.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T/6nqx0B7/uTe5JjBwrKZilLuwfhHLOVmNKlT/wr4A9Dna94mgTdz3lTfrdJ72QRx7IHCv/LzoJPmFSfK/N6WA==",
+      "path": "system.drawing.common/9.0.5",
+      "hashPath": "system.drawing.common.9.0.5.nupkg.sha512"
     },
     "System.IO.Pipelines/9.0.1": {
       "type": "package",

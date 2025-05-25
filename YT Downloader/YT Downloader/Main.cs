@@ -16,18 +16,22 @@ namespace YT_Downloader
         {
             Console.WriteLine("Podaj link do filmu z YouTube:");
             var videoUrl = Console.ReadLine();
-            var path = "video.mp4";
+            Console.WriteLine("Sciezke zapisu:");
+            var path = Console.ReadLine();
 
-            if(videoUrl is not null)
+            if (videoUrl is not null)
             {
                 Download download = new(videoUrl, path);
+
+                await download.GetDataAsync();
+
 
                 var progress = new Progress<double>(p =>
                 {
                     Console.Write($"\rPostęp pobierania: {p:P1}");
                 });
 
-                await download.StartDownload(progress);
+                await download.StartAsync(progress);
 
             }
             else

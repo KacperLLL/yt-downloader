@@ -24,3 +24,32 @@ C:\Users\Kacper\Desktop\yt downloader\YT Downloader\YT Downloader\obj\Debug\net7
 C:\Users\Kacper\Desktop\yt downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.pdb
 C:\Users\Kacper\Desktop\yt downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.genruntimeconfig.cache
 C:\Users\Kacper\Desktop\yt downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\ref\YT Downloader.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YT Downloader.exe
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YT Downloader.deps.json
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YT Downloader.runtimeconfig.json
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YT Downloader.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YT Downloader.pdb
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\AngleSharp.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\CliWrap.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.IO.Pipelines.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.Management.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.Text.Encodings.Web.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\System.Text.Json.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YoutubeExplode.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\YoutubeExplode.Converter.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.csproj.AssemblyReference.cache
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.AssemblyInfoInputs.cache
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.AssemblyInfo.cs
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.csproj.CoreCompileInputs.cache
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.sourcelink.json
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downl.257A32E7.Up2Date
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\refint\YT Downloader.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.pdb
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\YT Downloader.genruntimeconfig.cache
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\obj\Debug\net7.0\ref\YT Downloader.dll
+C:\Users\kacpe\Desktop\yt-downloader\YT Downloader\YT Downloader\bin\Debug\net7.0\SixLabors.ImageSharp.dll

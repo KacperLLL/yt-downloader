@@ -47,6 +47,22 @@
           "buildTransitive/netcoreapp2.0/Microsoft.Bcl.AsyncInterfaces.targets": {}
         }
       },
+      "SixLabors.ImageSharp/3.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -316,6 +332,22 @@
         "microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "SixLabors.ImageSharp/3.1.8": {
+      "sha512": "8eJkROLGh6DBQLR666q2aOpAaean2puZaZ6Ur9YxoyGzjaZhv8OJSxtnDou54+OXMkXtLUdyQC0so47sOsqZjg==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.1.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.1.8.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -682,6 +714,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "SixLabors.ImageSharp >= 3.1.8",
       "System.Drawing.Common >= 9.0.5",
       "YoutubeExplode >= 6.5.4",
       "YoutubeExplode.Converter >= 6.5.4"
@@ -738,6 +771,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[3.1.8, )"
+          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[9.0.5, )"
