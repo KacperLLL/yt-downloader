@@ -10,7 +10,6 @@ namespace YT_Downloader
 {
     internal class Start
     {
-        private double _procent= 0;
 
         static async Task Main()
         {
@@ -39,7 +38,6 @@ namespace YT_Downloader
                 Console.WriteLine("BLAD");
             }
         }
-        public double procent { get { return _procent; } set { _procent = value; } }
 
     }
 }
