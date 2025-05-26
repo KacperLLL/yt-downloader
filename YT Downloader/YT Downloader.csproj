@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.8" />
+    <PackageReference Include="YoutubeExplode" Version="6.5.4" />
+    <PackageReference Include="YoutubeExplode.Converter" Version="6.5.4" />
+  </ItemGroup>
+
 </Project>
