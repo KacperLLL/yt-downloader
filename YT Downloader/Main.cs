@@ -14,7 +14,7 @@ namespace YT_Downloader
         static async Task Main()
         {
             var path = "C:\\Users\\kacpe\\Desktop\\temp\\";
-            var videoUrl = "https://www.youtube.com/watch?v=q9e9RDVc3AU&ab_channel=Gimper";
+            var videoUrl = "https://www.youtube.com/watch?v=VQRLujxTm3c&t=4s&ab_channel=RockstarGames";
 
             if (videoUrl is not null)
             {
@@ -22,6 +22,7 @@ namespace YT_Downloader
 
                 await download.GetDataAsync();
 
+                Console.WriteLine("Rozpoczęto pobieranie: " + download.title + "; " + download.duration + "; " + download.author.ChannelTitle);
 
                 var progress = new Progress<double>(p =>
                 {
