@@ -22,6 +22,8 @@ namespace YT_Downloader
         private YoutubeExplode.Common.Author _author;
         private string _thumbnailUrl;
         private Image _thumbnai;
+        private CancellationTokenSource _cts;
+        private CancellationToken _token;
 
         public Download(string URL, string SAVE_PATH) { 
             //ustawienia klienta pobierania
@@ -29,6 +31,8 @@ namespace YT_Downloader
             _youtube = new YoutubeClient();
             _save_path= SAVE_PATH;
             _is_busy = false;
+            _cts = new CancellationTokenSource();
+            _token = _cts.Token;
         }
 
         public async Task GetDataAsync()
@@ -51,67 +55,49 @@ namespace YT_Downloader
 
         public async Task StartAsync()
         {
-            Console.WriteLine("Rozpoczenczie pobierania: ");
-
             try
             {
                 _is_busy = true;
                 await _youtube.Videos.DownloadAsync(_url, _save_path + _title + ".mp4");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Zakonczono pobieranie");
                 _is_busy = false;
+            }
+            catch
+            {
+                throw;
             }
             
 
         }
         public async Task StartAsync(Progress<double> PROGRESS)
         {
-            Console.WriteLine("Rozpoczenczie pobierania: ");
-            Console.WriteLine(_duration.ToString() + " " + _title.ToString()+" "+_author.ChannelTitle);
-
             try
             {   
                 _is_busy = true;
-                await _youtube.Videos.DownloadAsync(_url, _save_path+_title+".mp4", PROGRESS);
+                await _youtube.Videos.DownloadAsync(_url, _save_path+_title+".mp4", PROGRESS, _token);
+                _is_busy = false;
 
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Zakonczono pobieranie");
-                _is_busy = false;
+                throw;
             }
         }
-        public async Task StartAsync(Progress<double> PROGRESS, CancellationToken TOKEN)
+
+        public void CancelDownload()
         {
-            Console.WriteLine("Rozpoczenczie pobierania: ");
+            if (_is_busy)
+            {
+                //jeżeli jest pobieranie, anuluj je
+                _cts.Cancel();
 
-            try
-            {
-                _is_busy = true;
-                await _youtube.Videos.DownloadAsync(_url, _save_path + _title + ".mp4", PROGRESS, TOKEN);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Zakonczono pobieranie");
-                _is_busy = false;
+                //poczekaj na zakończenie pobierania i usunięcie pliku tymczasowego
+                while (_is_busy) ;
+                if (File.Exists(_save_path + _title + ".mp4.stream-1.tmp"))
+                {
+                    File.Delete(_save_path + _title + ".mp4.stream-1.tmp");
+                }
             }
         }
-
-
 
 
         public Image thumbnai { get; }

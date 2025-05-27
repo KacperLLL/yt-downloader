@@ -13,10 +13,8 @@ namespace YT_Downloader
 
         static async Task Main()
         {
-            Console.WriteLine("Podaj link do filmu z YouTube:");
-            var videoUrl = Console.ReadLine();
-            Console.WriteLine("Sciezke zapisu:");
-            var path = Console.ReadLine();
+            var path = "C:\\Users\\kacpe\\Desktop\\temp\\";
+            var videoUrl = "https://www.youtube.com/watch?v=q9e9RDVc3AU&ab_channel=Gimper";
 
             if (videoUrl is not null)
             {
@@ -30,7 +28,13 @@ namespace YT_Downloader
                     Console.Write($"\rPostęp pobierania: {p:P1}");
                 });
 
-                await download.StartAsync(progress);
+                download.StartAsync(progress);
+                var anul = Console.ReadLine();
+
+                if(anul=="N")
+                {
+                    download.CancelDownload();
+                }
 
             }
             else
