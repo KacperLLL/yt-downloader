@@ -13,7 +13,7 @@ namespace YT_Downloader
 
         static async Task Main()
         {
-            var path = "C:\\Users\\kacpe\\Desktop\\temp\\";
+            var path = "C:\\Users\\Kacper\\Desktop\\temp\\";
             var videoUrl = "https://www.youtube.com/watch?v=VQRLujxTm3c&t=4s&ab_channel=RockstarGames";
 
             if (videoUrl is not null)
@@ -29,12 +29,19 @@ namespace YT_Downloader
                     Console.Write($"\rPostęp pobierania: {p:P1}");
                 });
 
-                download.StartAsync(progress);
-                var anul = Console.ReadLine();
-
-                if(anul=="N")
+                try
                 {
-                    download.CancelDownload();
+                    download.StartAsync(progress);
+                    var anul = Console.ReadLine();
+
+                    if (anul == "N")
+                    {
+                        download.CancelDownload();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Wystąpił błąd podczas pobierania: " + ex.Message);
                 }
 
             }

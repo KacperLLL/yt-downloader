@@ -1,11 +1,11 @@
 ﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using System;
-using System.Diagnostics;
 using YoutubeExplode;
 using YoutubeExplode.Common;
 using YoutubeExplode.Converter;
 using YoutubeExplode.Videos;
+using System.Drawing;
+
 
 namespace YT_Downloader
 {
@@ -21,7 +21,8 @@ namespace YT_Downloader
         private string _description;
         private YoutubeExplode.Common.Author _author;
         private string _thumbnailUrl;
-        private Image _thumbnai;
+        private System.Drawing.Image _thumbnail;
+        private SixLabors.ImageSharp.Image _thumbnailSharp;
         private CancellationTokenSource _cts;
         private CancellationToken _token;
 
@@ -48,8 +49,9 @@ namespace YT_Downloader
             _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
             using (HttpClient http = new())
             {
-                var imageData = await http.GetByteArrayAsync(thumbnailUrl);
-                using Image image = Image.Load<Rgba32>(new MemoryStream(imageData));
+                var imageData = await http.GetByteArrayAsync(_thumbnailUrl);
+                _thumbnailSharp = SixLabors.ImageSharp.Image.Load<Rgba32>(new MemoryStream(imageData));
+                _thumbnail = ConvertImageSharpToSystemImage(_thumbnailSharp);
             }
         }
 
@@ -99,17 +101,25 @@ namespace YT_Downloader
             }
         }
 
+        private System.Drawing.Image ConvertImageSharpToSystemImage(SixLabors.ImageSharp.Image imageSharp)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageSharp.SaveAsPng(ms);
+                ms.Seek(0, SeekOrigin.Begin);
+                return System.Drawing.Image.FromStream(ms);
+            }
+        }
 
-        public Image thumbnai { get; }
-        public YoutubeClient youtube { get { return _youtube; } }
-        public YoutubeExplode.Videos.Video video { get { return _video; } }
+
+        public SixLabors.ImageSharp.Image thumbnaiSharp { get { return _thumbnailSharp; } }
+        public System.Drawing.Image thumbnail { get { return _thumbnail; } }
         public string url { get { return _url;} set { _url = value; } }
         public string save_path { get { return _save_path;} set { _save_path = value; } }
         public bool is_busy { get { return _is_busy; } }
         public TimeSpan? duration { get { return _duration; } }
         public string title { get { return _title; } }
         public string description { get { return _description; } }
-        public string thumbnailUrl { get { return _thumbnailUrl; } }
         public Author author { get { return _author; } }
     }
 }
