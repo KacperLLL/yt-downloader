@@ -38,20 +38,27 @@ namespace YT_Downloader
 
         public async Task GetDataAsync()
         {
-            //ustawienie podstawowych metadanych
-            _video = await _youtube.Videos.GetAsync(_url);
-            _duration = _video.Duration;
-            _title = _video.Title;
-            _description = _video.Description;
-            _author = _video.Author;
-
-            //pobieranie miniatury
-            _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
-            using (HttpClient http = new())
+            try
             {
-                var imageData = await http.GetByteArrayAsync(_thumbnailUrl);
-                _thumbnailSharp = SixLabors.ImageSharp.Image.Load<Rgba32>(new MemoryStream(imageData));
-                _thumbnail = ConvertImageSharpToSystemImage(_thumbnailSharp);
+                //ustawienie podstawowych metadanych
+                _video = await _youtube.Videos.GetAsync(_url);
+                _duration = _video.Duration;
+                _title = _video.Title;
+                _description = _video.Description;
+                _author = _video.Author;
+
+                //pobieranie miniatury
+                _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
+                using (HttpClient http = new())
+                {
+                    var imageData = await http.GetByteArrayAsync(_thumbnailUrl);
+                    _thumbnailSharp = SixLabors.ImageSharp.Image.Load<Rgba32>(new MemoryStream(imageData));
+                    _thumbnail = ConvertImageSharpToSystemImage(_thumbnailSharp);
+                }
+            }
+            catch
+            {
+                 throw;
             }
         }
 
@@ -87,27 +94,41 @@ namespace YT_Downloader
 
         public void CancelDownload()
         {
-            if (_is_busy)
+            try
             {
-                //jeżeli jest pobieranie, anuluj je
-                _cts.Cancel();
-
-                //poczekaj na zakończenie pobierania i usunięcie pliku tymczasowego
-                while (_is_busy) ;
-                if (File.Exists(_save_path + _title + ".mp4.stream-1.tmp"))
+                if (_is_busy)
                 {
-                    File.Delete(_save_path + _title + ".mp4.stream-1.tmp");
+                    //jeżeli jest pobieranie, anuluj je
+                    _cts.Cancel();
+
+                    //poczekaj na zakończenie pobierania i usunięcie pliku tymczasowego
+                    while (_is_busy) ;
+                    if (File.Exists(_save_path + _title + ".mp4.stream-1.tmp"))
+                    {
+                        File.Delete(_save_path + _title + ".mp4.stream-1.tmp");
+                    }
                 }
+            }
+            catch
+            {
+                 throw;
             }
         }
 
         private System.Drawing.Image ConvertImageSharpToSystemImage(SixLabors.ImageSharp.Image imageSharp)
         {
-            using (var ms = new MemoryStream())
+            try
             {
-                imageSharp.SaveAsPng(ms);
-                ms.Seek(0, SeekOrigin.Begin);
-                return System.Drawing.Image.FromStream(ms);
+                using (var ms = new MemoryStream())
+                {
+                    imageSharp.SaveAsPng(ms);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    return System.Drawing.Image.FromStream(ms);
+                }
+            }
+            catch
+            {
+                throw;
             }
         }
 
