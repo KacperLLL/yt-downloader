@@ -13,10 +13,10 @@ namespace YT_Downloader
     {
         private readonly YoutubeClient _youtube;
         private string _url;
-        private string _save_path;
         private bool _is_busy;
         private YoutubeExplode.Videos.Video _video;
         private TimeSpan? _duration;
+        private string _save_path;
         private string _title;
         private string _description;
         private YoutubeExplode.Common.Author _author;
@@ -26,11 +26,10 @@ namespace YT_Downloader
         private CancellationTokenSource _cts;
         private CancellationToken _token;
 
-        public Download(string URL, string SAVE_PATH) { 
+        public Download(string URL) { 
             //ustawienia klienta pobierania
             _url= URL;
             _youtube = new YoutubeClient();
-            _save_path= SAVE_PATH;
             _is_busy = false;
             _cts = new CancellationTokenSource();
             _token = _cts.Token;
@@ -62,8 +61,9 @@ namespace YT_Downloader
             }
         }
 
-        public async Task StartAsync()
+        public async Task StartAsync(string SAVE_PATH)
         {
+            _save_path = SAVE_PATH;
             try
             {
                 _is_busy = true;
@@ -77,8 +77,9 @@ namespace YT_Downloader
             
 
         }
-        public async Task StartAsync(Progress<double> PROGRESS)
+        public async Task StartAsync(string SAVE_PATH, Progress<double> PROGRESS)
         {
+            _save_path = SAVE_PATH;
             try
             {   
                 _is_busy = true;
@@ -90,7 +91,8 @@ namespace YT_Downloader
             {
                 throw;
             }
-        }
+
+         }
 
         public void CancelDownload()
         {
@@ -111,9 +113,12 @@ namespace YT_Downloader
             }
             catch
             {
-                 throw;
+                throw;
             }
         }
+
+
+
 
         private System.Drawing.Image ConvertImageSharpToSystemImage(SixLabors.ImageSharp.Image imageSharp)
         {
