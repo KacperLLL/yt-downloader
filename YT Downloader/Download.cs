@@ -45,15 +45,7 @@ namespace YT_Downloader
                 _title = _video.Title;
                 _description = _video.Description;
                 _author = _video.Author;
-
-                //pobieranie miniatury
-                _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
-                using (HttpClient http = new())
-                {
-                    var imageData = await http.GetByteArrayAsync(_thumbnailUrl);
-                    _thumbnailSharp = SixLabors.ImageSharp.Image.Load<Rgba32>(new MemoryStream(imageData));
-                    _thumbnail = ConvertImageSharpToSystemImage(_thumbnailSharp);
-                }
+                await DownloadThumbnailAsync();
             }
             catch
             {
@@ -94,6 +86,8 @@ namespace YT_Downloader
 
          }
 
+
+
         public void CancelDownload()
         {
             try
@@ -119,7 +113,17 @@ namespace YT_Downloader
 
 
 
-
+        private async Task DownloadThumbnailAsync()
+        {
+            //pobieranie miniatury
+            _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
+            using (HttpClient http = new())
+            {
+                var imageData = await http.GetByteArrayAsync(_thumbnailUrl);
+                _thumbnailSharp = SixLabors.ImageSharp.Image.Load<Rgba32>(new MemoryStream(imageData));
+                _thumbnail = ConvertImageSharpToSystemImage(_thumbnailSharp);
+            }
+        }
         private System.Drawing.Image ConvertImageSharpToSystemImage(SixLabors.ImageSharp.Image imageSharp)
         {
             try
