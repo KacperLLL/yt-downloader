@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static YT_Downloader.Download;
 using static YT_Downloader.Search;
+using static YT_Downloader.url;
 
 namespace YT_Downloader
 {
@@ -15,7 +16,9 @@ namespace YT_Downloader
 
         static async Task Main()
         {
-            await Start.TestSearch();
+            url URL = new(@"C:\Users\Kacper\Desktop\yt-downloader\YT Downloader");
+            Console.WriteLine(URL.GetUrl());
+
         }
 
 
