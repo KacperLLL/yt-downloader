@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static YT_Downloader.Download;
 using static YT_Downloader.Search;
-using static YT_Downloader.url;
+using static YT_Downloader.Path;
 
 namespace YT_Downloader
 {
@@ -16,12 +16,12 @@ namespace YT_Downloader
 
         static async Task Main()
         {
-            url URL = new(@"C:\Users\Kacper\Desktop\yt-downloader\YT Downloader");
-            Console.WriteLine(URL.GetUrl());
+            Path path = new(@"C:\Users\Kacper\Desktop\yt-downloader\YT Downloader");
+            Console.WriteLine(path.GetPath());
 
         }
 
-
+/*
         private static async Task TestSearch()
         {
             var path = "C:\\Users\\Kacper\\Desktop\\temp\\";
@@ -102,7 +102,7 @@ namespace YT_Downloader
             {
                 Console.WriteLine("BLAD");
             }
-        }
+        }*/
 
     }
 }

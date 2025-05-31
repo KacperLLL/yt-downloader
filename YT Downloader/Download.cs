@@ -53,9 +53,9 @@ namespace YT_Downloader
             }
         }
 
-        public async Task StartAsync(string SAVE_PATH)
+        public async Task StartAsync(Path PATH)
         {
-            _save_path = SAVE_PATH;
+            _save_path = PATH.GetPath();
             try
             {
                 _is_busy = true;
@@ -69,9 +69,9 @@ namespace YT_Downloader
             
 
         }
-        public async Task StartAsync(string SAVE_PATH, Progress<double> PROGRESS)
+        public async Task StartAsync(Path PATH, Progress<double> PROGRESS)
         {
-            _save_path = SAVE_PATH;
+            _save_path = PATH.GetPath();
             try
             {   
                 _is_busy = true;
