@@ -1,0 +1,32 @@
+using Microsoft.Web.WebView2.WinForms;
+using System;
+
+namespace YT_DOWNLOADER
+{
+    public partial class Form1 : Form
+    {
+        private WebView2 webView;
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeWebView();
+        }
+
+        private async void InitializeWebView()
+        {
+            webView = new WebView2
+            {
+                Dock = DockStyle.Fill
+            };
+
+            this.Controls.Add(webView);
+
+            await webView.EnsureCoreWebView2Async(null);
+            string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace(@"\", "/");
+            string resultPath = @"file:///" + exePath.Replace(@"bin/Debug/net6.0-windows/YT_DOWNLOADER.dll", "") + "GUI/index.html";
+            //MessageBox.Show(resultPath, "WebView2 Path", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            webView.Source = new Uri(resultPath);
+        }
+    }
+}
