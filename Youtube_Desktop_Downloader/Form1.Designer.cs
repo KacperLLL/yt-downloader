@@ -28,59 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Connection_check = new Panel();
-            label1 = new Label();
-            connection_label = new Label();
-            Connection_check.SuspendLayout();
+            Back_panel = new TableLayoutPanel();
+            Menu_panel = new TableLayoutPanel();
+            Main_page = new TableLayoutPanel();
+            textBox1 = new TextBox();
+            Back_panel.SuspendLayout();
+            Main_page.SuspendLayout();
             SuspendLayout();
             // 
-            // Connection_check
+            // Back_panel
             // 
-            Connection_check.Controls.Add(connection_label);
-            Connection_check.Controls.Add(label1);
-            Connection_check.Location = new Point(1, 2);
-            Connection_check.Name = "Connection_check";
-            Connection_check.Size = new Size(797, 449);
-            Connection_check.TabIndex = 0;
+            Back_panel.AutoSize = true;
+            Back_panel.ColumnCount = 2;
+            Back_panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            Back_panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            Back_panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            Back_panel.Controls.Add(Menu_panel, 0, 0);
+            Back_panel.Controls.Add(Main_page, 1, 0);
+            Back_panel.Location = new Point(0, 0);
+            Back_panel.Name = "Back_panel";
+            Back_panel.RowCount = 1;
+            Back_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            Back_panel.Size = new Size(1154, 632);
+            Back_panel.TabIndex = 0;
             // 
-            // label1
+            // Menu_panel
             // 
-            label1.AutoSize = true;
-            label1.Cursor = Cursors.AppStarting;
-            label1.Font = new Font("Lucida Sans Unicode", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(241, 259);
-            label1.Name = "label1";
-            label1.Size = new Size(321, 93);
-            label1.TabIndex = 0;
-            label1.Text = "Sprawdzanie połączenia..\r\n\r\n\r\n";
+            Menu_panel.BackColor = Color.FromArgb(47, 49, 62);
+            Menu_panel.ColumnCount = 1;
+            Menu_panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Menu_panel.Location = new Point(3, 3);
+            Menu_panel.Name = "Menu_panel";
+            Menu_panel.RowCount = 6;
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 13F));
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            Menu_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 55F));
+            Menu_panel.Size = new Size(167, 626);
+            Menu_panel.TabIndex = 0;
             // 
-            // connection_label
+            // Main_page
             // 
-            connection_label.AutoSize = true;
-            connection_label.Font = new Font("Lucida Sans", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            connection_label.Location = new Point(399, 242);
-            connection_label.Name = "connection_label";
-            connection_label.Size = new Size(0, 17);
-            connection_label.TabIndex = 1;
+            Main_page.BackColor = Color.FromArgb(28, 30, 40);
+            Main_page.ColumnCount = 1;
+            Main_page.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Main_page.Controls.Add(textBox1, 0, 0);
+            Main_page.Location = new Point(176, 3);
+            Main_page.Name = "Main_page";
+            Main_page.RowCount = 2;
+            Main_page.RowStyles.Add(new RowStyle(SizeType.Percent, 13F));
+            Main_page.RowStyles.Add(new RowStyle(SizeType.Percent, 87F));
+            Main_page.Size = new Size(975, 626);
+            Main_page.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(47, 49, 62);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.ForeColor = SystemColors.Window;
+            textBox1.Location = new Point(14, 14);
+            textBox1.Margin = new Padding(14, 14, 3, 3);
+            textBox1.MinimumSize = new Size(800, 50);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(800, 50);
+            textBox1.TabIndex = 0;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 450);
-            Controls.Add(Connection_check);
+            BackColor = Color.FromArgb(27, 27, 36);
+            ClientSize = new Size(1154, 630);
+            Controls.Add(Back_panel);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            Connection_check.ResumeLayout(false);
-            Connection_check.PerformLayout();
+            Back_panel.ResumeLayout(false);
+            Main_page.ResumeLayout(false);
+            Main_page.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel Connection_check;
-        private Label label1;
-        private Label connection_label;
+        private TableLayoutPanel Back_panel;
+        private TableLayoutPanel Menu_panel;
+        private TableLayoutPanel Main_page;
+        private TextBox textBox1;
     }
 }
