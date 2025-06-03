@@ -11,22 +11,110 @@
     --ProgressBar: #6068e0;
 }
 
-#search-input
+#account-div
 {
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 80%;
-    height: 40px;
-    background-color: var(--Cells);
-    color: var(--FontColor);
-    padding-left: 10px;
-    font-size: 16px;
+    width: 100%;
+    height: 80px;
+    border-bottom: var(--BackgroundMain) solid 1px;
+
+}
+
+
+ul.nav-list {
+  list-style: none; /* usuwamy domyślną listę */
+  padding-left: 0;
+}
+
+ul.nav-list li {
+  background-size: 18px 18px; /* rozmiar ikony */
+  background-repeat: no-repeat;
+  background-position: 0 4px; /* wyrównanie pionowe */
+  padding-left: 30px; /* odstęp dla ikony */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  line-height: 1.5em;
+  margin: 20px;
+  border-radius: 10px;
+  color: var(--FontColor);
+  cursor: pointer;
+  background-position: 7px center;
+}
+
+.home-button
+{
+  background-image: url(src/home_button_icon.svg);
+  background-color: var(--Selected);
+}
+.download-button
+{
+  background-image: url(src/download_button_icon.svg);
+}
+.settings-button
+{
+  background-image: url(src/settings_button_icon.svg);
+}
+.help-button
+{
+  background-image: url(src/help_button_icon.svg);
+}
+
+#search-button
+{
+    background-color: var(--ButtonColor);
     border-radius: 20px;
+    border-style: none;
+    color: var(--FontColor);
+    font-size: 20px;
+    cursor: pointer;
+}
+#search-button:hover
+{
+    background-color: var(--Selected);
+    color: var(--SelectedFontColor);
+}
+
+#search-bar-div
+{
+    height: 40px;
+    display: flex;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+#search-button-div
+{
+    height: 40px;
+    display: flex;
+    width: 16%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+input.search-input::placeholder {
+    color: var(--FontColor); /* kolor tekstu placeholdera */
+    opacity: 1;  /* ważne w niektórych przeglądarkach, np. Firefox */
+  }
+
+input.search-input
+{
+    color: var(--SelectedFontColor);
+    width: 100%;
+    height: 100%;
+    background-color: var(--Cells);
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    border-style: none;
 }
 
 
 #search-container
 {
+    display: flex;
     border-bottom: var(--NavigationBar) solid 1px;
     width: 100%;
     height: 80px;
@@ -34,7 +122,7 @@
 
 #nav-bar
 {
-    width: 15%;
+    width: 150px;
     height: 100%;
     background-color: var(--NavigationBar);
 }
