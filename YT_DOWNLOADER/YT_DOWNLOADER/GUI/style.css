@@ -1,0 +1,62 @@
+:root
+{
+    --BackgroundMain: #14151a;
+    --NavigationBar:  #1a1d24; 
+    --Cells: #1b1d24;             
+    --Icons: #666b72;
+    --Selected: #262a32;  
+    --FontColor: #859097;
+    --SelectedFontColor: #ebf0f1;
+    --ButtonColor: #252830;
+    --ProgressBar: #6068e0;
+}
+
+#search-input
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+    height: 40px;
+    background-color: var(--Cells);
+    color: var(--FontColor);
+    padding-left: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+
+#search-container
+{
+    border-bottom: var(--NavigationBar) solid 1px;
+    width: 100%;
+    height: 80px;
+}
+
+#nav-bar
+{
+    width: 15%;
+    height: 100%;
+    background-color: var(--NavigationBar);
+}
+
+#main-page
+{
+    width: 85%;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+}
+
+
+#container
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    margin: 0; /* aby uniknąć domyślnych marginesów */
+}
