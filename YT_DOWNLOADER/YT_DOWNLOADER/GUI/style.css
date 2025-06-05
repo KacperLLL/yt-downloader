@@ -11,19 +11,49 @@
     --ProgressBar: #6068e0;
 }
 
+@keyframes arrowJump{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: left center;
+    }
+    50% {
+      background-position: left center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}
+
+.download-tab-arrow:hover
+{
+  background-color: var(--Selected);
+  background-image: url(src/arrow_button_icon_OPEN_SELECTED.svg);
+}
 
 .download-tab-arrow
 {
-  width: 4%; 
-  height: 50px; 
+  width: 3.5%; 
+  height: 60px; 
   position: absolute; 
   top: 45%; 
   left: 96%; 
   background-color: var(--Cells);
-  background-image: url(src/arrow_button_icon.svg);
-  background-size: cover; /* dopasowuje obraz do rozmiaru elementu */
+  background-image: url(src/arrow_button_icon_OPEN.svg);
+  background-size: 25px;
   background-repeat: no-repeat; /* zapobiega powtarzaniu obrazu */
-  background-position: left center; /* wyrównanie obrazu do lewej strony */
+  background-position: center center; /* wyrównanie obrazu do lewej strony */
+  animation-name: arrowJump;
+  animation-duration: 2s; /* czas trwania animacji */
+  animation-iteration-count: infinite; /* animacja będzie się powtarzać w nieskończoność */
+  cursor: pointer;
 
 }
 
@@ -38,6 +68,10 @@
 ul.nav-list {
   list-style: none; /* usuwamy domyślną listę */
   padding-left: 0;
+}
+
+ul.nav-list li:hover {
+  color: var(--SelectedFontColor);
 }
 
 ul.nav-list li {
