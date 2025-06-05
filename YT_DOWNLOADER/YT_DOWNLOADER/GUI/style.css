@@ -11,6 +11,30 @@
     --ProgressBar: #6068e0;
 }
 
+.thumbnail
+{
+    width: 150px;
+    height: 85px;
+    background-color: black;
+}
+
+.download-tab
+{
+  display: flex;
+  width: 85%;
+  height: 85px;
+  background-color: var(--Cells);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  margin-left: 25px;
+}
+
+
+
+
+
+
 @keyframes arrowJump{
     0% {
       background-position: center center;
@@ -96,7 +120,7 @@ ul.nav-list li {
   background-color: var(--Selected);
   color: var(--SelectedFontColor);
 }
-.download-button
+.downloads-button
 {
   background-image: url(src/download_button_icon.svg);
 }
