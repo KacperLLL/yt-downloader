@@ -20,6 +20,7 @@
 
 .download-tab
 {
+  max-width: 900px;
   display: flex;
   width: 85%;
   height: 85px;
@@ -30,8 +31,17 @@
   margin-left: 25px;
 }
 
+a.link_a
+{
+  text-decoration: none; /* usunięcie podkreślenia */
+  color: var(--FontColor);
+}
 
-
+a.link_a:hover
+{
+  text-decoration: none; /* usunięcie podkreślenia */
+  color: var(--SelectedFontColor);
+}
 
 
 
@@ -66,7 +76,7 @@
 {
   width: 3.5%; 
   height: 60px; 
-  position: absolute; 
+  position: fixed; 
   top: 45%; 
   left: 96%; 
   background-color: var(--Cells);
@@ -114,7 +124,17 @@ ul.nav-list li {
   background-position: 7px center;
 }
 
+#download-container
+{
+  margin-top: 100px;
+}
+
 .home-button
+{
+  background-image: url(src/home_button_icon.svg);
+}
+
+.home-button_s
 {
   background-image: url(src/home_button_icon.svg);
   background-color: var(--Selected);
@@ -131,6 +151,26 @@ ul.nav-list li {
 .help-button
 {
   background-image: url(src/help_button_icon.svg);
+}
+
+.downloads-button_s
+{
+ background-image: url(src/download_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+
+.settings-button_s
+{
+  background-image: url(src/settings_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+.help-button_s
+{
+  background-image: url(src/help_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
 }
 
 #search-button
@@ -163,7 +203,7 @@ ul.nav-list li {
 {
     height: 40px;
     display: flex;
-    width: 80%;
+    width: 60%;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 2%;
@@ -198,6 +238,8 @@ input.search-input
 
 #search-container
 {
+    background-color: var(--BackgroundMain);
+    position: fixed;
     display: flex;
     border-bottom: var(--NavigationBar) solid 1px;
     width: 100%;
@@ -206,6 +248,8 @@ input.search-input
 
 #nav-bar
 {
+    top: 0;
+    position: fixed;
     font-weight: 400;
     width: 150px;
     height: 100%;
@@ -214,6 +258,7 @@ input.search-input
 
 #main-page
 {
+    margin-left: 150px;
     width: 85%;
     height: 100%;
     background-color: var(--BackgroundMain);
