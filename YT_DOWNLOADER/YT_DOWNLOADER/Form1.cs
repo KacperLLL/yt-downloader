@@ -25,7 +25,6 @@ namespace YT_DOWNLOADER
             await webView.EnsureCoreWebView2Async(null);
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace(@"\", "/");
             string resultPath = @"file:///" + exePath.Replace(@"bin/Debug/net6.0-windows/YT_DOWNLOADER.dll", "") + "GUI/index.html";
-            //MessageBox.Show(resultPath, "WebView2 Path", MessageBoxButtons.OK, MessageBoxIcon.Information);
             webView.Source = new Uri(resultPath);
         }
     }
