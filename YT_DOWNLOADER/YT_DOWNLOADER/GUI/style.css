@@ -11,6 +11,11 @@
     --ProgressBar: #6068e0;
 }
 
+.thumbnail iframe
+{
+  border-radius: 20px;
+}
+
 .download-button div:hover
 {
   color: var(--SelectedFontColor);
@@ -52,6 +57,7 @@
     width: 300px;
     height: 170px;
     background-color: black;
+    border-radius: 20px;
 }
 
 h2.title
