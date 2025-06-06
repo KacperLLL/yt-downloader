@@ -12,6 +12,7 @@ namespace YT_Downloader
     internal class Download
     {
         private readonly YoutubeClient _youtube;
+        private string _id;
         private string _url;
         private bool _is_busy;
         private YoutubeExplode.Videos.Video _video;
@@ -45,7 +46,7 @@ namespace YT_Downloader
                 _title = _video.Title;
                 _description = _video.Description;
                 _author = _video.Author;
-                await DownloadThumbnailAsync();
+                _id = _video.Id;
             }
             catch
             {
@@ -113,7 +114,7 @@ namespace YT_Downloader
 
 
 
-        private async Task DownloadThumbnailAsync()
+        public async Task DownloadThumbnailAsync()
         {
             //pobieranie miniatury
             _thumbnailUrl = _video.Thumbnails.GetWithHighestResolution().Url;
@@ -142,6 +143,7 @@ namespace YT_Downloader
         }
 
 
+        public string id { get { return _id; } }
         public SixLabors.ImageSharp.Image thumbnaiSharp { get { return _thumbnailSharp; } }
         public System.Drawing.Image thumbnail { get { return _thumbnail; } }
         public string url { get { return _url;} set { _url = value; } }

@@ -17,7 +17,7 @@ namespace YT_Downloader
             _youtube = new YoutubeClient();
         }
 
-        public async Task<List<Download>> SearchVideosAsync(string query, int maxResults)
+        /*public async Task<List<Download>> SearchVideosAsync(string query, int maxResults)
         {
 
             List<Download> results = new List<Download>();
@@ -40,6 +40,37 @@ namespace YT_Downloader
                     }
 
                     
+                }
+                return results;
+
+            }
+            catch
+            {
+                throw;
+            }
+        }*/
+
+        public async Task<List<VideoSearchResult>> SearchVideosAsync(string query, int maxResults)
+        {
+
+            List<VideoSearchResult> results = new List<VideoSearchResult>();
+
+            try
+            {
+
+                await foreach (VideoSearchResult res in _youtube.Search.GetResultsAsync(query))
+                {
+                    if (res is VideoSearchResult)
+                    {
+                        results.Add(res);
+                    }
+
+                    if (results.Count >= maxResults)
+                    {
+                        return results;
+                    }
+
+
                 }
                 return results;
 
