@@ -79,7 +79,8 @@ function hideElements()
     const title = document.querySelectorAll("h2.title");
     const author = document.querySelectorAll(".lower-data h4");
     const download_tab = document.querySelectorAll(".download-tab");
-    const buttonDownload = document.querySelectorAll(".download-button div");
+    const buttonDownload = document.querySelectorAll(".button-download");
+    const infoButton = document.querySelectorAll(".info-button");
     {
         if(video.length > 0)
         {
@@ -152,19 +153,6 @@ function hideElements()
                 });
             }
 
-            if(window.innerWidth < 800)
-            {
-                buttonDownload.forEach(element => {
-                element.style.fontSize = "8px";
-                element.style.lineHeight = "4";
-                });
-            }
-            else
-            {
-                buttonDownload.forEach(element => {
-                    element.style.fontSize = "14px";
-                });
-            }
         }
     }
 }

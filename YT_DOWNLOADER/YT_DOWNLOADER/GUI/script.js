@@ -23,8 +23,8 @@ let url ="https://www.youtube.com/embed/e6763Kqd8NY?si=u9dXn52JOIFkSWTr";
                             <h4 class="duration">${duration}</h4></div>
                         </div>
                         <div class="download-button">
-                            <div class="button-download">Download</div>
-                            <div class="info-button">Info</div>
+                            <div class="button-download"></div>
+                            <div class="info-button"></div>
                         </div>`;
         tile.dataset.index = i;
         container.appendChild(tile);
