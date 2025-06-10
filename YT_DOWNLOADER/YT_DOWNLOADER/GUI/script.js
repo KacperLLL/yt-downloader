@@ -14,7 +14,7 @@ let url ="https://www.youtube.com/embed/e6763Kqd8NY?si=u9dXn52JOIFkSWTr";
         const tile = document.createElement("div");
         tile.className = "download-tab";
         tile.innerHTML = `<div class="thumbnail">
-                            <iframe width="300" height="170" src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                         </div>
                         <div class="data">
