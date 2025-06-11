@@ -10,6 +10,19 @@
     <script src="hide.js"></script>
     <script src="script.js"></script>
     <script src="down_bar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+  new Sortable(document.getElementById('queue'), {
+    animation: 150,
+    ghostClass: 'sortable-ghost'
+  });});
+</script>
+
+
+
+
     <title>Document</title>
 </head>
 <body>
@@ -45,6 +58,9 @@
                 <div id="percent">70%</div><div id="button_stop">Cancel</div>
             </div>
             <div id="down_que">Queue</div>
+            <ul id="queue">
+            </ul>
+
 
 
         </div>

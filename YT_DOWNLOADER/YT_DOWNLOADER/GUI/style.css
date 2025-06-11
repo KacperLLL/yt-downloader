@@ -10,11 +10,74 @@
     --ButtonColor: #252830;
     --ProgressBar: #6068e0;
 }
+
+.btn_trash:hover
+{
+  background-image: url(src/trash_btn_hover.svg);
+}
+
+.btn_trash
+{
+  margin: auto;
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  background-image: url(src/trash_btn.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-color: var(--ButtonColor);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.QuAuthor
+{
+  color: var(--FontColor);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.QuTitle
+{
+  color: var(--SelectedFontColor);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+#queue {
+    list-style: none;
+    padding-top: 20px;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    padding-left: 0;
+  }
+
+  .queue-item {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    background-color: var(--Cells);
+    cursor: grab;
+    border-radius: 6px;
+    transition: background 0.2s;
+    display: flex;
+  }
+
+
 #percent
 {
   margin-top: 28px;
-  margin-left: 10%;
-  width: 20%;
+  margin-left: 15%;
+  width: 25%;
   font-size: 16px;
 }
 
@@ -30,15 +93,15 @@
   background-image: url(src/cancel_btn.svg);
   background-position: 10% center;
   background-repeat: no-repeat;
-  background-size: 30px 30px;
-  width: 35%;
+  background-size: 20px 20px;
+  width: 30%;
   height: 36px;
   margin-right: 10%;
   background-color: var(--ButtonColor);
   margin-top: 13px;
-  font-size: 20px;
-  padding-left: 25%;
-  padding-top: 10px;
+  font-size: 15px;
+  padding-left: 20%;
+  padding-top: 15px;
   border-radius: 10px;
 }
 
@@ -76,6 +139,7 @@
 
 #down_que
 {
+  cursor: default;
   border-top: var(--Cells) dashed 3px;
   padding-top: 10px;
   padding-left: 5%;
@@ -83,7 +147,6 @@
   font-size: 20px;
   width: 80%;
   height: auto;
-  min-height: 80px;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 10px;
@@ -121,6 +184,8 @@
 
 #down_bar
 {
+  cursor: default;
+    display: none;
     top: 0;
     right: 0;
     position: fixed;
@@ -296,6 +361,27 @@ a.link_a:hover
 
 }
 
+@keyframes arrowJumpLeft{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: left center;
+    }
+    50% {
+      background-position: left center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}
+
 
 
 .download-tab-arrow
@@ -306,19 +392,15 @@ a.link_a:hover
   top: 45%; 
 
 
-  right: 320px;
-  background-image: url(src/arrow_button_icon_CLOSE.svg);  /* ustawienia przy otawrtym panelu */
-
-
-  /*left: 94%; 
-  background-image: url(src/arrow_button_icon_OPEN.svg);*/ /* ustawienia przy zamkniętym panelu */
+  right: 20px;
+  background-image: url(src/arrow_button_icon_OPEN.svg);
 
 
   background-color: var(--Cells);
   background-size: 25px;
   background-repeat: no-repeat; /* zapobiega powtarzaniu obrazu */
   background-position: center center; /* wyrównanie obrazu do lewej strony */
-  animation-name: arrowJump;
+  animation-name: arrowJumpLeft;
   animation-duration: 2s; /* czas trwania animacji */
   animation-iteration-count: infinite; /* animacja będzie się powtarzać w nieskończoność */
   cursor: pointer;
@@ -440,7 +522,7 @@ ul.nav-list li {
 {
     height: 40px;
     display: flex;
-    width: 60%;
+    width: 50%;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 2%;
