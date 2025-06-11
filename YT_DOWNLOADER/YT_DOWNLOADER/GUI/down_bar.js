@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+  new Sortable(document.getElementById('queue'), {
+    animation: 150,
+    ghostClass: 'sortable-ghost'
+  });
+
+
+
     const downBar = document.getElementById('down_bar');
     const arrow = document.querySelector('.download-tab-arrow');
 
