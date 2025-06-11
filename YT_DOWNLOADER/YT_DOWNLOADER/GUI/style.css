@@ -10,6 +10,131 @@
     --ButtonColor: #252830;
     --ProgressBar: #6068e0;
 }
+#percent
+{
+  margin-top: 28px;
+  margin-left: 10%;
+  width: 20%;
+  font-size: 16px;
+}
+
+#button_stop:hover
+{
+  background-image: url(src/cancel_btn_hover.svg);
+  color: var(--SelectedFontColor);
+  cursor: pointer;
+}
+
+#button_stop
+{
+  background-image: url(src/cancel_btn.svg);
+  background-position: 10% center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  width: 35%;
+  height: 36px;
+  margin-right: 10%;
+  background-color: var(--ButtonColor);
+  margin-top: 13px;
+  font-size: 20px;
+  padding-left: 25%;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+#actual_download
+{
+  font-size: 15px;
+  color: var(--SelectedFontColor);
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: 600;;
+}
+
+.progress-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    width: 80%;
+    background-color: var(--ButtonColor);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--ProgressBar);
+    text-align: center;
+    color: white;
+    line-height: 25px;
+    transition: width 0.3s ease;
+  }
+
+
+
+#down_que
+{
+  border-top: var(--Cells) dashed 3px;
+  padding-top: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 20px;
+  width: 80%;
+  height: auto;
+  min-height: 80px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_header
+{
+  color: var(--SelectedFontColor);
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_panel
+{
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 20px;
+  border-radius: 20px;
+  background-color: var(--Cells);
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+
+
+#down_bar
+{
+    top: 0;
+    right: 0;
+    position: fixed;
+    font-weight: 400;
+    width: 300px;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    overflow-y: auto;
+    border-left: var(--ButtonColor) solid 1px;
+}
+
+
+
+
 
 .thumbnail iframe
 {
@@ -155,10 +280,10 @@ a.link_a:hover
       background-position: center center;
     }
     30% {
-      background-position: left center;
+      background-position: right center;
     }
     50% {
-      background-position: left center;
+      background-position: right center;
     }
     80%{
       background-position: center center;
@@ -171,21 +296,25 @@ a.link_a:hover
 
 }
 
-.download-tab-arrow:hover
-{
-  background-color: var(--Selected);
-  background-image: url(src/arrow_button_icon_OPEN_SELECTED.svg);
-}
+
 
 .download-tab-arrow
 {
-  width: 3.5%; 
+  width: 40px; 
   height: 60px; 
   position: fixed; 
   top: 45%; 
-  left: 96%; 
+
+
+  right: 320px;
+  background-image: url(src/arrow_button_icon_CLOSE.svg);  /* ustawienia przy otawrtym panelu */
+
+
+  /*left: 94%; 
+  background-image: url(src/arrow_button_icon_OPEN.svg);*/ /* ustawienia przy zamkniętym panelu */
+
+
   background-color: var(--Cells);
-  background-image: url(src/arrow_button_icon_OPEN.svg);
   background-size: 25px;
   background-repeat: no-repeat; /* zapobiega powtarzaniu obrazu */
   background-position: center center; /* wyrównanie obrazu do lewej strony */
@@ -193,6 +322,8 @@ a.link_a:hover
   animation-duration: 2s; /* czas trwania animacji */
   animation-iteration-count: infinite; /* animacja będzie się powtarzać w nieskończoność */
   cursor: pointer;
+  border: var(--ButtonColor) solid 1px;
+  border-radius: 5px;
 
 }
 
@@ -366,6 +497,7 @@ input.search-input
 {
     margin-left: 150px;
     width: 85%;
+
     height: 100%;
     background-color: var(--BackgroundMain);
 }

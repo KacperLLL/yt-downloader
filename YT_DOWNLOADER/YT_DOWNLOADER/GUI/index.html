@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script src="hide.js"></script>
     <script src="script.js"></script>
+    <script src="down_bar.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div id="container">
-        <div class="download-tab-arrow"></div>
         <div id="nav-bar">
             <div id="account-div"></div>
             <div id="nav-div">
@@ -37,6 +37,18 @@
             <div id="download-container"></div>
                 
         </div>
+        <div id="down_bar">
+            <div id="down_header"><h1>Downloading</h1></div>
+            <div id="down_panel">
+                <div id="actual_download">oto jak straciłem ponad 100.000 PLN...</div>   
+                <div class="progress-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                <div id="percent">70%</div><div id="button_stop">Cancel</div>
+            </div>
+            <div id="down_que">Queue</div>
+
+
+        </div>
+        <div class="download-tab-arrow"></div>
     </div>
 </body>
 </html>
