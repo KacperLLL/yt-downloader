@@ -538,12 +538,12 @@ ul.nav-list li {
     margin-left: 2%;
 }
 
-input.search-input::placeholder {
+#search-input::placeholder {
     color: var(--FontColor); /* kolor tekstu placeholdera */
     opacity: 1;  /* ważne w niektórych przeglądarkach, np. Firefox */
   }
 
-input.search-input
+#search-input
 {
     color: var(--SelectedFontColor);
     width: 100%;

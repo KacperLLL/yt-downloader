@@ -4,6 +4,21 @@ using System.Threading.Tasks;
 
 namespace YT_DOWNLOADER
 {
+    enum QueryType
+    {
+        Search,
+        Null
+    }
+
+    public class Query
+    {
+        Query(string q)
+        {
+
+        }
+    }
+
+
     public partial class Form1 : Form
     {
         private WebView2 webView;
@@ -27,11 +42,11 @@ namespace YT_DOWNLOADER
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace(@"\", "/");
             string resultPath = @"file:///" + exePath.Replace(@"bin/Debug/net6.0-windows/YT_DOWNLOADER.dll", "") + "GUI/index.html";
             webView.Source = new Uri(resultPath);
-        }
 
-        private async void Form1_Load(object sender, EventArgs e)
-        {
-            await JsCommunicationHandle();
+            webView.CoreWebView2.NavigationCompleted += async (s, e) =>
+            {
+                await JsCommunicationHandle();
+            };
         }
 
         private async Task JsCommunicationHandle()
@@ -39,13 +54,25 @@ namespace YT_DOWNLOADER
             await webView.EnsureCoreWebView2Async();
             webView.CoreWebView2.WebMessageReceived += async (sender, args) =>
             {
-                string message = args.TryGetWebMessageAsString();
-                if (message == "search")
-                {
-                    MessageBox.Show("Search button clicked!");
-                    await webView.ExecuteScriptAsync("Test('FLAG');");
-                }
+                //await webView.ExecuteScriptAsync($"alert('{args.TryGetWebMessageAsString()}');");
+                object sasd = TrimQuery(args.TryGetWebMessageAsString());
             };
+        }
+
+        private (type: QueryType, args: string[]) TrimQuery(string Q)
+        {
+            string[] args = Array.Empty<string>();
+
+            if (Q.StartsWith("#SEARCH"))
+            {
+                Q = Q.Replace("#SEARCH_", "");
+
+                args = Q.Split('_');
+                
+                return (QueryType.Search, args);
+            }
+
+            return (QueryType.Null, args);
         }
     }
 }
