@@ -1,7 +1,8 @@
 using Microsoft.Web.WebView2.WinForms;
 using System;
 using System.Threading.Tasks;
-using static YT_DOWNLOADER.Query;
+using YT_Downloader;
+using YT_DOWNLOADER;
 
 namespace YT_DOWNLOADER
 {
@@ -40,8 +41,17 @@ namespace YT_DOWNLOADER
             await webView.EnsureCoreWebView2Async();
             webView.CoreWebView2.WebMessageReceived += async (sender, args) =>
             {
-                //await webView.ExecuteScriptAsync($"alert('{args.TryGetWebMessageAsString()}');");
                 Query querry = new Query(args.TryGetWebMessageAsString());
+
+                if(querry.type == QueryType.Search)
+                {
+                    Search search = new Search();
+                    List<>await search.SearchVideosAsync(querry.args[0], int.Parse(querry.args[1]));
+
+                    
+                }
+
+                await webView.ExecuteScriptAsync("reciveSearch('Q');");
             };
         }
     }

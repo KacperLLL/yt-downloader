@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+/*
     const list = document.getElementById("queue"); 
 
         let tittleQ = "oto jak straciłem ponad 100.000 PLN..."
@@ -68,5 +69,5 @@ document.addEventListener('DOMContentLoaded', function() {
 `;
                 tile.dataset.index = i;
                 list.appendChild(tile);
-                }
+                }*/
 });

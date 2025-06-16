@@ -26,7 +26,6 @@ namespace YT_DOWNLOADER
                 _args = Q.Split('_');
             }
         }
-
         public string[] args { get { return _args; } }
         public QueryType type { get { return _type; } }
     }

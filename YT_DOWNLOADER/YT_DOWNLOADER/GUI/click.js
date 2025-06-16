@@ -14,11 +14,3 @@ document.addEventListener('DOMContentLoaded', function() {
         
     });
 });
-
-
-
-
-/*
-    
-
-*/
