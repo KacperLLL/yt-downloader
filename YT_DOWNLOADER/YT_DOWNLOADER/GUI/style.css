@@ -1,0 +1,602 @@
+:root
+{
+    --BackgroundMain: #14151a;
+    --NavigationBar:  #1a1d24; 
+    --Cells: #1b1d24;             
+    --Icons: #666b72;
+    --Selected: #262a32;  
+    --FontColor: #859097;
+    --SelectedFontColor: #ebf0f1;
+    --ButtonColor: #252830;
+    --ProgressBar: #6068e0;
+}
+
+.btn_trash:hover
+{
+  background-image: url(src/trash_btn_hover.svg);
+}
+
+.btn_trash
+{
+  margin: auto;
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  background-image: url(src/trash_btn.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-color: var(--ButtonColor);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.QuAuthor
+{
+  color: var(--FontColor);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.QuTitle
+{
+  color: var(--SelectedFontColor);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+#queue {
+    list-style: none;
+    padding-top: 20px;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    padding-left: 0;
+  }
+
+  .queue-item {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    background-color: var(--Cells);
+    cursor: grab;
+    border-radius: 6px;
+    transition: background 0.2s;
+    display: flex;
+  }
+
+
+#percent
+{
+  margin-top: 28px;
+  margin-left: 15%;
+  width: 25%;
+  font-size: 16px;
+}
+
+#button_stop:hover
+{
+  background-image: url(src/cancel_btn_hover.svg);
+  color: var(--SelectedFontColor);
+  cursor: pointer;
+}
+
+#button_stop
+{
+  background-image: url(src/cancel_btn.svg);
+  background-position: 10% center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  width: 30%;
+  height: 36px;
+  margin-right: 10%;
+  background-color: var(--ButtonColor);
+  margin-top: 13px;
+  font-size: 15px;
+  padding-left: 20%;
+  padding-top: 15px;
+  border-radius: 10px;
+}
+
+#actual_download
+{
+  font-size: 15px;
+  color: var(--SelectedFontColor);
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: 600;;
+}
+
+.progress-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    width: 80%;
+    background-color: var(--ButtonColor);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--ProgressBar);
+    text-align: center;
+    color: white;
+    line-height: 25px;
+    transition: width 0.3s ease;
+  }
+
+
+
+#down_que
+{
+  cursor: default;
+  border-top: var(--Cells) dashed 3px;
+  padding-top: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 20px;
+  width: 80%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_header
+{
+  color: var(--SelectedFontColor);
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_panel
+{
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 20px;
+  border-radius: 20px;
+  background-color: var(--Cells);
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+
+
+#down_bar
+{
+  cursor: default;
+    display: none;
+    top: 0;
+    right: 0;
+    position: fixed;
+    font-weight: 400;
+    width: 300px;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    overflow-y: auto;
+    border-left: var(--ButtonColor) solid 1px;
+}
+
+
+
+
+
+.thumbnail iframe
+{
+  border-radius: 20px;
+  width: 300px; 
+  height: 170px;
+}
+
+.download-button div:hover
+{
+  color: var(--SelectedFontColor);
+}
+
+.download-button div{
+  font-size: 14px;
+}
+
+.info-button:hover
+{
+  background-image: url(src/info_hover.svg);  
+}
+
+.button-download:hover
+{
+  background-image: url(src/download_hover.svg)  
+}
+
+
+.info-button
+{
+  line-height: 70px;
+  text-align: center;
+  cursor: pointer;
+  cursor: pointer;
+  background-color: var(--ButtonColor);
+  width: 55%;
+  height: 45%;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-image: url(src/info.svg);  
+  background-repeat: no-repeat;
+  background-size: 50%; /* dopasowuje rozmiar ikony */
+  background-position: center;
+}
+
+.button-download
+{
+  line-height: 70px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--ButtonColor);
+  width: 55%;
+  height: 45%;
+  border-radius: 10px;
+  margin-bottom: 10%;
+  text-transform: uppercase;
+  background-image: url(src/download_button_icon.svg);  
+  background-repeat: no-repeat;
+  background-size: 50%; /* dopasowuje rozmiar ikony */
+  background-position: center;
+  
+}
+
+.thumbnail
+{
+    width: 300px;
+    height: 170px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+h2.title
+{
+  color: var(--SelectedFontColor);
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.lower-data h4
+{
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+.data
+{
+  margin-left: 30px;
+  width: 45%;
+  height: auto;
+}
+
+.upper-data
+{
+  height: 50%;
+  width: 100%;
+}
+
+.lower-data
+{
+  border-top: solid 2px var(--BackgroundMain);
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+
+.download-button
+{
+  justify-items: center;
+  margin-left: 15px;
+  width: 30%;
+}
+
+.download-tab
+{
+  max-width: 900px;
+  display: flex;
+  width: 85%;
+  height: 170px;
+  background-color: var(--Cells);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  margin-left: 25px;
+}
+
+a.link_a
+{
+  text-decoration: none; /* usunięcie podkreślenia */
+  color: var(--FontColor);
+}
+
+a.link_a:hover
+{
+  text-decoration: none; /* usunięcie podkreślenia */
+  color: var(--SelectedFontColor);
+}
+
+
+
+@keyframes arrowJump{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: right center;
+    }
+    50% {
+      background-position: right center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}
+
+@keyframes arrowJumpLeft{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: left center;
+    }
+    50% {
+      background-position: left center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}
+
+
+
+.download-tab-arrow
+{
+  width: 40px; 
+  height: 60px; 
+  position: fixed; 
+  top: 45%; 
+
+
+  right: 20px;
+  background-image: url(src/arrow_button_icon_OPEN.svg);
+
+
+  background-color: var(--Cells);
+  background-size: 25px;
+  background-repeat: no-repeat; /* zapobiega powtarzaniu obrazu */
+  background-position: center center; /* wyrównanie obrazu do lewej strony */
+  animation-name: arrowJumpLeft;
+  animation-duration: 2s; /* czas trwania animacji */
+  animation-iteration-count: infinite; /* animacja będzie się powtarzać w nieskończoność */
+  cursor: pointer;
+  border: var(--ButtonColor) solid 1px;
+  border-radius: 5px;
+
+}
+
+#account-div
+{
+    width: 100%;
+    height: 80px;
+    border-bottom: var(--BackgroundMain) solid 1px;
+
+}
+
+ul.nav-list {
+  list-style: none; /* usuwamy domyślną listę */
+  padding-left: 0;
+}
+
+ul.nav-list li:hover {
+  color: var(--SelectedFontColor);
+}
+
+ul.nav-list li {
+  font-size: 14px;
+  background-size: 18px 18px; /* rozmiar ikony */
+  background-repeat: no-repeat;
+  background-position: 0 4px; /* wyrównanie pionowe */
+  padding-left: 30px; /* odstęp dla ikony */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  margin: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-position: 7px center;
+  min-height: 31px;
+  line-height: 31px;
+}
+
+#download-container
+{
+  margin-top: 100px;
+}
+
+.home-button
+{
+  background-image: url(src/home_button_icon.svg);
+}
+
+.home-button_s
+{
+  background-image: url(src/home_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+.downloads-button
+{
+  background-image: url(src/download_button_icon.svg);
+}
+.settings-button
+{
+  background-image: url(src/settings_button_icon.svg);
+}
+.help-button
+{
+  background-image: url(src/help_button_icon.svg);
+}
+
+.downloads-button_s
+{
+ background-image: url(src/download_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+
+.settings-button_s
+{
+  background-image: url(src/settings_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+.help-button_s
+{
+  background-image: url(src/help_button_icon.svg);
+  background-color: var(--Selected);
+  color: var(--SelectedFontColor);
+}
+
+#search-button
+{
+    background-color: var(--ButtonColor);
+    border-radius: 20px;
+    border-style: none;
+    color: var(--FontColor);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(src/search_button_icon.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px; /* dopasowuje rozmiar ikony */
+    background-position: center;
+    width: 50px;
+    height: 40px;
+    
+}
+#search-button:hover
+{
+    background-color: var(--Selected);
+    background-image: url(src/search_selected_button_icon.svg);
+    color: var(--SelectedFontColor);
+}
+
+#search-bar-div
+{
+    height: 40px;
+    display: flex;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+#search-button-div
+{
+    height: 40px;
+    display: flex;
+    width: 16%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+#search-input::placeholder {
+    color: var(--FontColor); /* kolor tekstu placeholdera */
+    opacity: 1;  /* ważne w niektórych przeglądarkach, np. Firefox */
+  }
+
+#search-input
+{
+    color: var(--SelectedFontColor);
+    width: 100%;
+    height: 100%;
+    background-color: var(--Cells);
+    padding-left: 10px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+
+#search-container
+{
+    background-color: var(--BackgroundMain);
+    position: fixed;
+    display: flex;
+    border-bottom: var(--NavigationBar) solid 1px;
+    width: 100%;
+    height: 80px;
+}
+
+#nav-bar
+{
+    top: 0;
+    position: fixed;
+    font-weight: 400;
+    width: 150px;
+    height: 100%;
+    background-color: var(--NavigationBar);
+}
+
+#main-page
+{
+    margin-left: 150px;
+    width: 85%;
+
+    height: 100%;
+    background-color: var(--BackgroundMain);
+}
+
+
+#container
+{
+    color: var(--FontColor);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    margin: 0; /* aby uniknąć domyślnych marginesów */
+}
