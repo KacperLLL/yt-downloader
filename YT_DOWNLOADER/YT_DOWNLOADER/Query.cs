@@ -24,6 +24,7 @@ namespace YT_DOWNLOADER
                 Q = Q.Replace(";", "");
 
                 _args = Q.Split('_');
+                _type = QueryType.Search;
             }
         }
         public string[] args { get { return _args; } }
