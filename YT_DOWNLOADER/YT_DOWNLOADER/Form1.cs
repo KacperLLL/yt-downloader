@@ -1,24 +1,10 @@
 using Microsoft.Web.WebView2.WinForms;
 using System;
 using System.Threading.Tasks;
+using static YT_DOWNLOADER.Query;
 
 namespace YT_DOWNLOADER
 {
-    enum QueryType
-    {
-        Search,
-        Null
-    }
-
-    public class Query
-    {
-        Query(string q)
-        {
-
-        }
-    }
-
-
     public partial class Form1 : Form
     {
         private WebView2 webView;
@@ -55,24 +41,8 @@ namespace YT_DOWNLOADER
             webView.CoreWebView2.WebMessageReceived += async (sender, args) =>
             {
                 //await webView.ExecuteScriptAsync($"alert('{args.TryGetWebMessageAsString()}');");
-                object sasd = TrimQuery(args.TryGetWebMessageAsString());
+                Query querry = new Query(args.TryGetWebMessageAsString());
             };
-        }
-
-        private (type: QueryType, args: string[]) TrimQuery(string Q)
-        {
-            string[] args = Array.Empty<string>();
-
-            if (Q.StartsWith("#SEARCH"))
-            {
-                Q = Q.Replace("#SEARCH_", "");
-
-                args = Q.Split('_');
-                
-                return (QueryType.Search, args);
-            }
-
-            return (QueryType.Null, args);
         }
     }
 }
