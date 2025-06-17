@@ -9,6 +9,7 @@ function reciveSearch(Q)
     });
     
     const container = document.getElementById("download-container"); 
+    container.innerHTML = "";
 
     let tittle = "";
     let author = "";
