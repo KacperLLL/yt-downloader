@@ -18,14 +18,8 @@ namespace YT_DOWNLOADER
         private QueryType _type = QueryType.Null;
         public Query(string Q)
         {
-            if (Q.StartsWith("#SEARCH"))
-            {
-                Q = Q.Replace("#SEARCH_", "");
-                Q = Q.Replace(";", "");
-
-                _args = Q.Split('_');
-                _type = QueryType.Search;
-            }
+            _args = Array.Empty<string>();
+            _type = QueryType.Null;
         }
         public string[] args { get { return _args; } }
         public QueryType type { get { return _type; } }

@@ -42,26 +42,7 @@ namespace YT_DOWNLOADER
             await webView.EnsureCoreWebView2Async();
             webView.CoreWebView2.WebMessageReceived += async (sender, args) =>
             {
-                Query querry = new Query(args.TryGetWebMessageAsString());
-
-                if (querry.type == QueryType.Search)
-                {
-                    Search search = new Search();
-                    List<VideoSearchResult> result = await search.SearchVideosAsync(querry.args[0], int.Parse(querry.args[1]));
-
-                    string response = "#SRESPONSE_";
-
-                    foreach (VideoSearchResult resultItem in result)
-                    {
-                        {
-                            response = response + resultItem.Url + "#" + resultItem.Title + "#" + resultItem.Author + "#" + resultItem.Duration.ToString() + "#";
-                        }
-                    }
-
-                    response += ";";
-
-                    await webView.ExecuteScriptAsync($"reciveSearch('{response}');");
-                }
+                
 
             };
         }
