@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById("download-container");
         const searchInputElement = document.getElementById('search-input');
         if (searchInputElement) {
-            container.innerHTML = "";
+            container.innerHTML = '<span class="loader"></span>';
             const searchInput = searchInputElement.value;
             const query = '#SEARCH_' + searchInput+ "_" + queryCount+";";
             window.chrome.webview.postMessage(query);
