@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchInputElement = document.getElementById('search-input');
         if (searchInputElement) {
             container.innerHTML = '<span class="loader"></span>';
-            const searchInput = searchInputElement.value;
-            const query = '#SEARCH_' + searchInput+ "_" + queryCount+";";
-            window.chrome.webview.postMessage(query);
+            const searchInput = searchInputElement.value;  
+            const query = new QueryCode(searchInput, 10, "search");
+
+            window.chrome.webview.postMessage(JSON.stringify(query));
         }
         
     });

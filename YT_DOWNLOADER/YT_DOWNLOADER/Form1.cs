@@ -42,8 +42,10 @@ namespace YT_DOWNLOADER
             await webView.EnsureCoreWebView2Async();
             webView.CoreWebView2.WebMessageReceived += async (sender, args) =>
             {
-                
-
+                Query query = new(args.TryGetWebMessageAsString());
+                await query.RunAsync();
+                await webView.ExecuteScriptAsync($"reciveSearch({query.Serialize()});");
+                MessageBox.Show($"reciveSearch(\'{query.Serialize()}\');");
             };
         }
     }
