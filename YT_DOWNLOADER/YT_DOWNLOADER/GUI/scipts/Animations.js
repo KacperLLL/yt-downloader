@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-  new Sortable(document.getElementById('queue'), {
-    animation: 150,
-    ghostClass: 'sortable-ghost'
-  });
+
+    // Animacja sortowanej listy pobieranych filmów
+    new Sortable(document.getElementById('queue'), {
+        animation: 150,
+        ghostClass: 'sortable-ghost'
+    });
 
 
-
+    // Animacja strzałki do rozsuwania panelu pobierania
     const downBar = document.getElementById('down_bar');
     const arrow = document.querySelector('.download-tab-arrow');
 
@@ -50,24 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-/*
-    const list = document.getElementById("queue"); 
 
-        let tittleQ = "oto jak straciłem ponad 100.000 PLN..."
-        let authorQ = "Karol Friz Wiśniewski"
-        let durationQ = "21:16";
-
-
-
-            if (!list) {
-            console.error("Download container not found");}
-
-                for (let i = 1; i <= 6; i++) {
-                const tile = document.createElement("li");
-                tile.className = "queue-item";
-                tile.innerHTML = `<li class="queue-item"><div><h1 class="QuTitle">${tittleQ}</h1><h4 class="QuAuthor">${authorQ}<br>${durationQ}</h4></div><div class="btn_trash"></div></li>
-`;
-                tile.dataset.index = i;
-                list.appendChild(tile);
-                }*/
+    //const list = document.getElementById("queue"); 
+                
 });
