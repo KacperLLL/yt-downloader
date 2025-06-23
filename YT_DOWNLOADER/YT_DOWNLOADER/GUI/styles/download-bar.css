@@ -1,0 +1,213 @@
+@import url('animations.css');
+@import url('colors.css');
+
+.download-tab-arrow
+{
+  width: 40px; 
+  height: 60px; 
+  position: fixed; 
+  top: 45%; 
+
+
+  right: 20px;
+  background-image: url(src/arrow_button_icon_OPEN.svg);
+
+
+  background-color: var(--Cells);
+  background-size: 25px;
+  background-repeat: no-repeat; /* zapobiega powtarzaniu obrazu */
+  background-position: center center; /* wyrównanie obrazu do lewej strony */
+  animation-name: arrowJumpLeft;
+  animation-duration: 2s; /* czas trwania animacji */
+  animation-iteration-count: infinite; /* animacja będzie się powtarzać w nieskończoność */
+  cursor: pointer;
+  border: var(--ButtonColor) solid 1px;
+  border-radius: 5px;
+
+}
+
+.btn_trash:hover
+{
+  background-image: url(src/trash_btn_hover.svg);
+}
+
+.btn_trash
+{
+  margin: auto;
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  background-image: url(src/trash_btn.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-color: var(--ButtonColor);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.QuAuthor
+{
+  color: var(--FontColor);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.QuTitle
+{
+  color: var(--SelectedFontColor);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+#queue {
+    list-style: none;
+    padding-top: 20px;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    padding-left: 0;
+  }
+
+  .queue-item {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    background-color: var(--Cells);
+    cursor: grab;
+    border-radius: 6px;
+    transition: background 0.2s;
+    display: flex;
+  }
+
+
+#percent
+{
+  margin-top: 28px;
+  margin-left: 15%;
+  width: 25%;
+  font-size: 16px;
+}
+
+#button_stop:hover
+{
+  background-image: url(src/cancel_btn_hover.svg);
+  color: var(--SelectedFontColor);
+  cursor: pointer;
+}
+
+#button_stop
+{
+  background-image: url(src/cancel_btn.svg);
+  background-position: 10% center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  width: 30%;
+  height: 36px;
+  margin-right: 10%;
+  background-color: var(--ButtonColor);
+  margin-top: 13px;
+  font-size: 15px;
+  padding-left: 20%;
+  padding-top: 15px;
+  border-radius: 10px;
+}
+
+#actual_download
+{
+  font-size: 15px;
+  color: var(--SelectedFontColor);
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: 600;;
+}
+
+.progress-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    width: 80%;
+    background-color: var(--ButtonColor);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--ProgressBar);
+    text-align: center;
+    color: white;
+    line-height: 25px;
+    transition: width 0.3s ease;
+  }
+
+
+
+#down_que
+{
+  cursor: default;
+  border-top: var(--Cells) dashed 3px;
+  padding-top: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 20px;
+  width: 80%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_header
+{
+  color: var(--SelectedFontColor);
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#down_panel
+{
+  flex-wrap: wrap;
+  display: flex;
+  padding-top: 20px;
+  border-radius: 20px;
+  background-color: var(--Cells);
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+
+
+#down_bar
+{
+  cursor: default;
+    display: none;
+    top: 0;
+    right: 0;
+    position: fixed;
+    font-weight: 400;
+    width: 300px;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    overflow-y: auto;
+    border-left: var(--ButtonColor) solid 1px;
+}

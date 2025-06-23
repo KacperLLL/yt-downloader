@@ -1,0 +1,21 @@
+@import url('animations.css');
+@import url('colors.css');
+@import url('download-bar.css');
+@import url('nav-bar.css');
+@import url('main-page.css');
+
+#container
+{
+    color: var(--FontColor);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--BackgroundMain);
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--BackgroundMain);
+    margin: 0; /* aby uniknąć domyślnych marginesów */
+}
