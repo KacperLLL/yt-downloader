@@ -1,15 +1,8 @@
-:root
-{
-    --BackgroundMain: #14151a;
-    --NavigationBar:  #1a1d24; 
-    --Cells: #1b1d24;             
-    --Icons: #666b72;
-    --Selected: #262a32;  
-    --FontColor: #859097;
-    --SelectedFontColor: #ebf0f1;
-    --ButtonColor: #252830;
-    --ProgressBar: #6068e0;
-}
+@import url('animations.css');
+@import url('colors.css');
+@import url('download-bar.css');
+@import url('nav-bar.css');
+@import url('main-page.css');
 
 .loader {
   width: 48px;
@@ -42,15 +35,6 @@
   background: #FFF;
   box-sizing: border-box;
   animation: bump 0.4s ease-in-out infinite alternate;
-}
-
-@keyframes bump {
-  0% {
-    transform: translate(-50%, 5px);
-  }
-  100% {
-    transform: translate(-50%, -5px);
-  }
 }
     
 
@@ -380,50 +364,6 @@ a.link_a:hover
 {
   text-decoration: none; /* usunięcie podkreślenia */
   color: var(--SelectedFontColor);
-}
-
-
-
-@keyframes arrowJump{
-    0% {
-      background-position: center center;
-    }
-    30% {
-      background-position: right center;
-    }
-    50% {
-      background-position: right center;
-    }
-    80%{
-      background-position: center center;
-    }
-    100% {
-      background-position: center center;
-    }
-
-
-
-}
-
-@keyframes arrowJumpLeft{
-    0% {
-      background-position: center center;
-    }
-    30% {
-      background-position: left center;
-    }
-    50% {
-      background-position: left center;
-    }
-    80%{
-      background-position: center center;
-    }
-    100% {
-      background-position: center center;
-    }
-
-
-
 }
 
 

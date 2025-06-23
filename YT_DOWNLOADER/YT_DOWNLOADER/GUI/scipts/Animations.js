@@ -18,23 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 downBar.style.display = 'block';
                 arrow.classList.add('active');
                 arrow.style.right = '320px';
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_CLOSE.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_CLOSE.svg)';
                 arrow.style.animationName = 'arrowJump';
             } else {
                 downBar.style.display = 'none';
                 arrow.style.right = '10px';
                 arrow.classList.remove('active');
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_OPEN.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_OPEN.svg)';
                 arrow.style.animationName = 'arrowJumpLeft';
             }
         });
 
         arrow.addEventListener('mouseover', function() {
             if (downBar.style.display === 'none' || downBar.style.display === '') {
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_OPEN_SELECTED.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_OPEN_SELECTED.svg)';
                 
             } else {
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_CLOSE_SELECTED.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_CLOSE_SELECTED.svg)';
                 
             }
 
@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         arrow.addEventListener('mouseout', function() {
             if (downBar.style.display === 'none' || downBar.style.display === '') {
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_OPEN.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_OPEN.svg)';
                 
             } else {
-                arrow.style.backgroundImage = 'url(src/arrow_button_icon_CLOSE.svg)';
+                arrow.style.backgroundImage = 'url(styles/src/arrow_button_icon_CLOSE.svg)';
                 
             }
 

@@ -1,0 +1,52 @@
+@import url('colors.css');
+
+@keyframes bump {
+  0% {
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    transform: translate(-50%, -5px);
+  }
+}
+
+@keyframes arrowJump{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: right center;
+    }
+    50% {
+      background-position: right center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}
+
+@keyframes arrowJumpLeft{
+    0% {
+      background-position: center center;
+    }
+    30% {
+      background-position: left center;
+    }
+    50% {
+      background-position: left center;
+    }
+    80%{
+      background-position: center center;
+    }
+    100% {
+      background-position: center center;
+    }
+
+
+
+}

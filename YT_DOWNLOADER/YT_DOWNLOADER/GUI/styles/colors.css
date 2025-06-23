@@ -1,0 +1,12 @@
+:root
+{
+    --BackgroundMain: #14151a;
+    --NavigationBar:  #1a1d24; 
+    --Cells: #1b1d24;             
+    --Icons: #666b72;
+    --Selected: #262a32;  
+    --FontColor: #859097;
+    --SelectedFontColor: #ebf0f1;
+    --ButtonColor: #252830;
+    --ProgressBar: #6068e0;
+}
