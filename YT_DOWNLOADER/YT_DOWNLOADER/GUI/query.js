@@ -1,17 +1,42 @@
 function reciveSearch(jsonString)
 {
-  const recivedObject = JSON.parse(jsonString)
-  
-  recivedObject.results.forEach((vid, index) => {
+  const container = document.getElementById("download-container"); 
+  container.innerHTML = "";
+
+  // Sprawdź co dostajesz
+  console.log("typeof jsonString:", typeof jsonString);
+  console.log("jsonString:", jsonString);
+
+  // Jeśli to string, sparsuj
+  if (typeof jsonString === "string") {
+    try {
+      jsonString = JSON.parse(jsonString);
+    } catch (e) {
+      console.error("Błąd parsowania JSON:", e);
+      return;
+    }
+  }
+
+  // Teraz sprawdź pole results
+  if (!jsonString.results) {
+    console.error("Brak results w jsonString!");
+    return;
+  }
+
+  /*jsonString.results.forEach((vid, index) => {
+    console.log(vid.Title, vid.Url, vid.Author.ChannelTitle, vid.Duration);
+  });*/
+
+  jsonString.results.forEach((vid, index) => {
       const tile = document.createElement("div");
         tile.className = "download-tab";
         tile.innerHTML = `<div class="thumbnail">
-                            <iframe src="${vid.Url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe src="${zamienNaEmbed(vid.Url)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                         </div>
                         <div class="data">
                             <div class="upper-data"><h2 class="title">${vid.Title}</h2></div>
-                            <div class="lower-data"><h4 class="author">${vid.ChannelTitle}</h4>
+                            <div class="lower-data"><h4 class="author">${vid.Author.ChannelTitle}</h4>
                             <h4 class="duration">${vid.Duration}</h4></div>
                         </div>
                         <div class="download-button">
@@ -107,7 +132,7 @@ function reciveSearch(Q)
     });
   
   }
-}
+}*/
 
 
 function zamienNaEmbed(link) {
@@ -119,4 +144,4 @@ function zamienNaEmbed(link) {
   } else {
     return link; // zwróć bez zmian, jeśli nie pasuje
   }
-}*/
+}

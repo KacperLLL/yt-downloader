@@ -1,4 +1,5 @@
 using Microsoft.Web.WebView2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 using YoutubeExplode.Search;
@@ -44,8 +45,9 @@ namespace YT_DOWNLOADER
             {
                 Query query = new(args.TryGetWebMessageAsString());
                 await query.RunAsync();
-                await webView.ExecuteScriptAsync($"reciveSearch({query.Serialize()});");
-                MessageBox.Show($"reciveSearch(\'{query.Serialize()}\');");
+                string serialized = JsonConvert.SerializeObject(query.Serialize());
+                await webView.ExecuteScriptAsync($"reciveSearch({serialized});");
+                File.WriteAllText("query.json", query.Serialize());
             };
         }
     }
