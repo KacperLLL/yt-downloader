@@ -44,8 +44,8 @@ namespace YT_DOWNLOADER
             {
                 Query query = new(args.TryGetWebMessageAsString());
                 await query.RunAsync();
-                await webView.ExecuteScriptAsync($"reciveSearch({query.Serialize()});");
-                MessageBox.Show($"reciveSearch(\'{query.Serialize()}\');");
+                await webView.ExecuteScriptAsync($"reciveSearch(\'{query.Serialize()}\');");
+                File.WriteAllText("reciveSearch('{query.Serialize()}\');");
             };
         }
     }

@@ -1,8 +1,22 @@
 function reciveSearch(jsonString)
 {
-  const recivedObject = JSON.parse(jsonString)
   
-  recivedObject.results.forEach((vid, index) => {
+
+  try
+  {
+    const recivedObject = JSON.parse(jsonString)
+    alert("jsonString");
+  }
+  catch (error)
+  {
+    console.error("Error parsing JSON:", error);
+    return;
+  }
+
+  //alert(recivedObject.results[0].Title);
+  
+  /*recivedObject.results.forEach((vid, index) => {
+    alert("FLAG");
       const tile = document.createElement("div");
         tile.className = "download-tab";
         tile.innerHTML = `<div class="thumbnail">
@@ -20,7 +34,7 @@ function reciveSearch(jsonString)
                         </div>`;
         tile.dataset.index = index;
         container.appendChild(tile);
-  });
+  });*/
 }
 
 
