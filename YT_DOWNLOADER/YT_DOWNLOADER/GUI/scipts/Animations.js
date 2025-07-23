@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animacja sortowanej listy pobieranych filmów
     new Sortable(document.getElementById('queue'), {
         animation: 150,
-        ghostClass: 'sortable-ghost'
+        ghostClass: 'sortable-ghost',
     });
 
 

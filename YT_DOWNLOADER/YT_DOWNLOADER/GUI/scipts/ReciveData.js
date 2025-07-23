@@ -40,15 +40,6 @@ function reciveSearch(jsonString)
         tile.dataset.author = vid.Author.ChannelTitle;
         container.appendChild(tile);
   });
-
-  films = Array.from(document.querySelectorAll(".download-tab"));
-  films.forEach((film, index) => {
-    const downloadButton = film.querySelector(".button-download");
-    downloadButton.addEventListener("click", function() {
-      element = new QueueElement(film.dataset.url, film.dataset.duration, film.dataset.title, film.dataset.author);
-      element.addToQueue();
-    });
-  });
 }
 
 
