@@ -30,7 +30,7 @@ function reciveSearch(jsonString)
                             <h4 class="duration">${vid.Duration}</h4></div>
                         </div>
                         <div class="download-button">
-                            <div class="button-download"></div>
+                            <div class="button-download"></div> 
                             <div class="info-button"></div>
                         </div>`;
         tile.dataset.index = index;
