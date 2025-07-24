@@ -1,6 +1,6 @@
 //lista elementów w kolejce, oraz lista wyświtlanych filmów
 let elements = [];
-let films = [];
+let list = [];
 
 //klasa elementu kolejki
 class Element {
@@ -13,6 +13,7 @@ class Element {
         this.isDownloading = false;
         this.queue = document.getElementById("queue");
         this.mainContainer = document.getElementById("download-container");
+        this.trash = null;
     }
    
     addToList(){   
@@ -35,8 +36,42 @@ class Element {
             tile.dataset.duration = this.duration;
             tile.dataset.author = this.author;
             this.mainContainer.appendChild(tile); 
+            list.push(this);
         }
-    addToQueue() {}
+    addToQueue() {
+        const tile = document.createElement("li");
+        tile.innerHTML = `<div class="queue-item">
+                                <div class="QuTitle">${this.title}}</div>
+                                <div class="QuAuthor">${this.author}</div>
+                                <div class="btn_trash"></div>
+                            </div>`;
+        this.queue.appendChild(tile);
+        this.trash = tile.querySelector(".btn_trash");
+        elements.push(this);
+        tile.dataset.index = elements.length;
+        
+        /*
+        addToQueue() {
+            const tile = document.createElement("li");
+            tile.innerHTML = `<div class="queue-item">
+                                <div class="QuTitle">${this.title}}</div>
+                                <div class="QuAuthor">${this.author}</div>
+                                <div class="btn_trash"></div>
+                            </div>`;
+            this.queue.appendChild(tile);
+            const trash = tile.querySelector(".btn_trash");
+            trash.addEventListener("click", () => {
+            this.removeFromQueue();
+            });
+            queueList.push(this);
+            tile.dataset.index = queueList.length;
+        } */
+
+
+
+
+
+    }
     removeFromQueue() {}
     startDownload() {}
     stopDownload() {}
