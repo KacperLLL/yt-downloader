@@ -39,6 +39,14 @@ class Element {
             });
         }
     addToQueue() {
+        try
+        {
+            elements.forEach(element => {
+            if(element.url === this.url) {
+                throw new Error("Film już w kolejce");
+            }
+        });
+
         this.queueTile = document.createElement("li");
         this.queueTile.innerHTML = `<div class="queue-item">
                                 <div class="QuTitle">${this.title}}</div>
@@ -50,11 +58,16 @@ class Element {
             this.removeFromQueue();
         });
         elements.push(this);
+        }
+        catch (error) {
+            alert(error.message);
+        }
     }
     removeFromQueue() {
         this.queue.removeChild(this.queueTile);
         elements = elements.filter(element => element !== this);
         this.queueTile = null;
+        console.log(elements);
     }
     startDownload() {}
     stopDownload() {}
