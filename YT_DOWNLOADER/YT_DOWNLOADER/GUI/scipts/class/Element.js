@@ -67,7 +67,6 @@ class Element {
         this.queue.removeChild(this.queueTile);
         elements = elements.filter(element => element !== this);
         this.queueTile = null;
-        console.log(elements);
     }
     startDownload() {}
     stopDownload() {}
