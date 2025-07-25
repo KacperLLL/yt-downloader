@@ -4,8 +4,7 @@ let list = [];
 
 //klasa elementu kolejki
 class Element {
-    constructor(vid, index) {
-        this.id = index;
+    constructor(vid) {
         this.url = vid.Url;
         this.title = vid.Title;
         this.duration = vid.Duration;
@@ -13,10 +12,10 @@ class Element {
         this.isDownloading = false;
         this.queue = document.getElementById("queue");
         this.mainContainer = document.getElementById("download-container");
-        this.trash = null;
+        this.queueTile = null;
     }
    
-    addToList(){   
+    addToList(){   null
         const tile = document.createElement("div");
             tile.className = "download-tab";
             tile.innerHTML = `<div class="thumbnail">
@@ -32,47 +31,31 @@ class Element {
                                 <div class="button-download"></div> 
                                 <div class="info-button"></div>
                             </div>`;
-            tile.dataset.index = this.id;
-            tile.dataset.duration = this.duration;
-            tile.dataset.author = this.author;
             this.mainContainer.appendChild(tile); 
             list.push(this);
+
+            tile.querySelector(".button-download").addEventListener("click", () => {
+                this.addToQueue();
+            });
         }
     addToQueue() {
-        const tile = document.createElement("li");
-        tile.innerHTML = `<div class="queue-item">
+        this.queueTile = document.createElement("li");
+        this.queueTile.innerHTML = `<div class="queue-item">
                                 <div class="QuTitle">${this.title}}</div>
                                 <div class="QuAuthor">${this.author}</div>
                                 <div class="btn_trash"></div>
                             </div>`;
-        this.queue.appendChild(tile);
-        this.trash = tile.querySelector(".btn_trash");
-        elements.push(this);
-        tile.dataset.index = elements.length;
-        
-        /*
-        addToQueue() {
-            const tile = document.createElement("li");
-            tile.innerHTML = `<div class="queue-item">
-                                <div class="QuTitle">${this.title}}</div>
-                                <div class="QuAuthor">${this.author}</div>
-                                <div class="btn_trash"></div>
-                            </div>`;
-            this.queue.appendChild(tile);
-            const trash = tile.querySelector(".btn_trash");
-            trash.addEventListener("click", () => {
+        this.queue.appendChild(this.queueTile);
+        this.queueTile.querySelector(".btn_trash").addEventListener("click", () => {
             this.removeFromQueue();
-            });
-            queueList.push(this);
-            tile.dataset.index = queueList.length;
-        } */
-
-
-
-
-
+        });
+        elements.push(this);
     }
-    removeFromQueue() {}
+    removeFromQueue() {
+        this.queue.removeChild(this.queueTile);
+        elements = elements.filter(element => element !== this);
+        this.queueTile = null;
+    }
     startDownload() {}
     stopDownload() {}
 

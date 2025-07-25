@@ -17,8 +17,8 @@ function reciveSearch(jsonString)
     return;
   }
 
-  jsonString.results.forEach((vid, index) => {
-    let element = new Element(vid, index);
+  jsonString.results.forEach((vid) => {
+    let element = new Element(vid);
     element.addToList();
   });
 }
